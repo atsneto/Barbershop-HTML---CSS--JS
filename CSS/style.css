@@ -157,6 +157,8 @@ main .container{
 @media (max-width: 1052px){
     .menu-icon{
     display: block;
+    align-items: center;
+    margin-top: 18px;
 }
     .ul{
         display: flex;
