@@ -153,6 +153,80 @@ main .container{
     font-weight: 600;
 }
 
+/*section cards */
+.cards {
+  background-color: #f9f9f9; /* cor de fundo suave */
+  padding: 60px 0;
+}
+
+.cards .container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 30px 20px;
+  flex: 1 1 300px; /* tamanho flexível */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.card .titulo {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card .descricao {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+/*section cards */
+
+/* section CEO */
+.CEO .container{
+    display: flex;
+    align-items: center;
+}
+.CEO .CEO-img{
+    width: 50%;
+}
+.CEO .CEO-img img{
+    width: 100%;
+    border-radius: 10px;
+}
+.CEO .CEO-text{
+    width: 50%;
+    padding-left: 90px;
+    
+}
+.CEO .CEO-text h2{
+    font-size: 1.5rem;
+}
+.CEO .CEO-text p{
+    margin: 20px 0;
+    color: var(--cinza-escuro);
+}
+
 /* responsivo */
 @media (max-width: 1052px){
     .menu-icon{
