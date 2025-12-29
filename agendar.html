@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Agendar Horário - Casablanca Barbearia</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav__logo">
+                    <img src="IMG/logo-casablanca.png" alt="Logo Casablanca" class="nav__logo-img">
+                    <a href="index.html" class="nav__logo-text">Casablanca</a>
+                </div>
+                
+                <ul class="nav__menu">
+                    <li><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li><a href="index.html#sobre" class="nav__link">Sobre</a></li>
+                    <li><a href="index.html#servicos" class="nav__link">Serviços</a></li>
+                    <li><a href="index.html#barbeiros" class="nav__link">Barbeiros</a></li>
+                    <li><a href="index.html#contato" class="nav__link">Contato</a></li>
+                </ul>
+
+                <div class="nav__actions">
+                    <a href="agendar.html" class="btn btn--primary">Agendar Horário</a>
+                    <button class="nav__toggle" aria-label="Abrir menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Scheduling Hero -->
+    <section class="schedule-hero">
+        <div class="container">
+            <div class="schedule-hero__content">
+                <span class="section__label">Agendamento</span>
+                <h1 class="schedule-hero__title">Reserve seu horário</h1>
+                <p class="schedule-hero__description">Escolha seu barbeiro, serviço e horário preferido. Vamos enviar um convite direto para seu WhatsApp!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scheduling Form -->
+    <section class="scheduling">
+        <div class="container">
+            <div class="scheduling__content">
+                <div class="scheduling__info">
+                    <span class="section__label">Como funciona</span>
+                    <h2 class="section__title">Agende em 3 passos</h2>
+                    <p class="section__description">Preecha o formulário ao lado, selecione seu barbeiro preferido e confirme. Você receberá uma mensagem no WhatsApp com a confirmação.</p>
+                    
+                    <div class="scheduling__steps">
+                        <div class="step-item">
+                            <div class="step-item__number">1</div>
+                            <div>
+                                <h4>Selecione o Barbeiro</h4>
+                                <p>Escolha entre nossos profissionais experientes</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-item__number">2</div>
+                            <div>
+                                <h4>Escolha a Data e Hora</h4>
+                                <p>Selecione o melhor horário para você</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-item__number">3</div>
+                            <div>
+                                <h4>Confirme pelo WhatsApp</h4>
+                                <p>Receba a confirmação direto no seu celular</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="scheduling__form" id="scheduleForm">
+                    <div class="form-group">
+                        <label>Barbeiro</label>
+                        <div class="form-options">
+                            <div class="form-option">
+                                <input type="radio" id="barber1" name="barber" value="Adeilton Silva" data-phone="5584987912547" required>
+                                <label for="barber1" class="option-label">Adeilton Silva</label>
+                            </div>
+                            <div class="form-option">
+                                <input type="radio" id="barber2" name="barber" value="Rômulo Silva" data-phone="5584981747425" required>
+                                <label for="barber2" class="option-label">Rômulo Silva</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Serviço</label>
+                        <select id="service" name="service" required>
+                            <option value="">Selecione</option>
+                            <option value="Corte">Corte</option>
+                            <option value="Barba">Barba</option>
+                            <option value="Corte + Barba">Corte + Barba</option>
+                            <option value="Degradê">Degradê</option>
+                            <option value="Design de Barba">Design de Barba</option>
+                            <option value="Sobrancelha">Sobrancelha</option>
+                        </select>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="date">Data</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="time">Hora</label>
+                            <select id="time" name="time" required>
+                                <option value="">Selecione</option>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                                <option value="19:00">19:00</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <button type="button" class="btn btn--primary btn--whatsapp-submit" id="submitBtn">
+                        Confirmar no WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contato">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <h3 class="footer__title">Casablanca</h3>
+                    <p class="footer__text">Barbearia Premium</p>
+                    <p class="footer__address">Av. Xavier da Silveira, 56<br>Morro Branco - RN</p>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/__barbeariacasablanca/" target="_blank" rel="noopener" aria-label="Instagram" class="footer__social-link">
+                            <img src="IMG/instagram.png" alt="Instagram">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer__links">
+                    <h4 class="footer__links-title">Navegação</h4>
+                    <ul class="footer__links-list">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#sobre">Sobre</a></li>
+                        <li><a href="index.html#servicos">Serviços</a></li>
+                        <li><a href="index.html#barbeiros">Barbeiros</a></li>
+                        <li><a href="index.html#contato">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__links">
+                    <h4 class="footer__links-title">Suporte</h4>
+                    <ul class="footer__links-list">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Como Funciona</a></li>
+                        <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__contact">
+                    <h4 class="footer__links-title">Contato</h4>
+                    <p class="footer__contact-item">barbeariacasablanca@casablanca.com</p>
+                    <p class="footer__contact-item">(88) 99999-9999</p>
+                    <p class="footer__contact-item">Brasil - RN</p>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; 2025 Casablanca Barbearia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/main.js"></script>
+    <script src="JS/schedule.js"></script>
+</body>
+</html>
