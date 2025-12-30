@@ -788,6 +788,11 @@ h3 {
     
     .hero__image {
         order: -1;
+        margin-left: -32px;
+    }
+    
+    .hero__image-wrapper:hover .hero__img {
+        transform: none;
     }
     
     .hero__text {
@@ -818,6 +823,11 @@ h3 {
     .footer__content {
         grid-template-columns: 1fr;
         gap: 32px;
+        text-align: center;
+    }
+
+    .footer__social {
+        justify-content: center;
     }
 }
 
