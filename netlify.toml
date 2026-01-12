@@ -1,0 +1,32 @@
+[build]
+  publish = "."
+
+# Global security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' 'unsafe-inline';
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data:;
+      font-src 'self' data:;
+      connect-src 'self';
+      frame-ancestors 'none';
+      base-uri 'self';
+      form-action 'self' https://wa.me;
+      upgrade-insecure-requests;
+      block-all-mixed-content
+    """
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Permissions-Policy = "accelerometer=(), autoplay=(), camera=(), document-domain=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), usb=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+# Prevent search engines from indexing deploy previews
+[context.deploy-preview]
+  [[context.deploy-preview.headers]]
+    for = "/*"
+    [context.deploy-preview.headers.values]
+      X-Robots-Tag = "noindex, nofollow"
