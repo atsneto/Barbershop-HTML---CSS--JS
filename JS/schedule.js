@@ -26,6 +26,72 @@ if (dateInput) {
     dateInput.min = today;
 }
 
+// Time slot handling by weekday
+const timeSelect = document.getElementById('time');
+const weekdayHours = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
+const saturdayHours = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00'];
+
+function setTimeOptions(times, placeholderText) {
+    if (!timeSelect) return;
+    timeSelect.innerHTML = '';
+
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = placeholderText;
+    placeholder.disabled = true;
+    placeholder.selected = true;
+    timeSelect.appendChild(placeholder);
+
+    times.forEach((time) => {
+        const option = document.createElement('option');
+        option.value = time;
+        option.textContent = time;
+        timeSelect.appendChild(option);
+    });
+}
+
+function getAllowedTimesForDate(dateStr) {
+    if (!dateStr) return null;
+    const date = new Date(`${dateStr}T00:00:00`);
+    if (Number.isNaN(date.getTime())) return null;
+
+    const day = date.getDay();
+    if (day === 0) return []; // Sunday closed
+    if (day === 6) return saturdayHours;
+    return weekdayHours;
+}
+
+function refreshTimeOptions() {
+    if (!timeSelect) return;
+
+    const allowedTimes = getAllowedTimesForDate(dateInput?.value);
+    if (allowedTimes === null) {
+        timeSelect.disabled = true;
+        timeSelect.required = true;
+        timeSelect.setCustomValidity('Selecione uma data válida.');
+        setTimeOptions([], 'Selecione uma data primeiro');
+        return;
+    }
+
+    if (allowedTimes.length === 0) {
+        timeSelect.disabled = true;
+        timeSelect.required = true;
+        timeSelect.setCustomValidity('Estamos fechados aos domingos.');
+        setTimeOptions([], 'Fechado aos domingos');
+        return;
+    }
+
+    timeSelect.disabled = false;
+    timeSelect.required = true;
+    timeSelect.setCustomValidity('');
+    setTimeOptions(allowedTimes, 'Selecione');
+}
+
+if (dateInput && timeSelect) {
+    dateInput.addEventListener('change', refreshTimeOptions);
+    refreshTimeOptions();
+}
+
 // Form submission and WhatsApp link generation
 const scheduleForm = document.getElementById('scheduleForm');
 const submitBtn = document.getElementById('submitBtn');
@@ -67,6 +133,20 @@ function handleScheduleSubmit() {
     const date = document.getElementById('date').value;
     const time = document.getElementById('time').value;
     const name = document.getElementById('name').value;
+
+    const allowedTimes = getAllowedTimesForDate(date);
+    if (allowedTimes === null) {
+        alert('Por favor, selecione uma data válida.');
+        return;
+    }
+    if (allowedTimes.length === 0) {
+        alert('Estamos fechados aos domingos. Por favor, escolha outro dia.');
+        return;
+    }
+    if (!allowedTimes.includes(time)) {
+        alert('Selecione um horário disponível para o dia escolhido.');
+        return;
+    }
     
     // Format date
     const dateObj = new Date(date + 'T00:00:00');
