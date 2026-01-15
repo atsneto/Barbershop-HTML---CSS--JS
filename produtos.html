@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" type="image/png" href="IMG/logo-casablanca.png">
+    <title>Produtos - Casablanca Barbearia</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav__logo">
+                    <img src="IMG/logo-casablanca.png" alt="Logo Casablanca" class="nav__logo-img">
+                    <a href="index.html" class="nav__logo-text">Casablanca</a>
+                </div>
+                
+                <ul class="nav__menu">
+                    <li><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li><a href="index.html#sobre" class="nav__link">Sobre</a></li>
+                    <li><a href="produtos.html" class="nav__link">Produtos</a></li>
+                    <li><a href="index.html#contato" class="nav__link">Contato</a></li>
+                </ul>
+
+                <div class="nav__actions">
+                    <a href="agendar.html" class="btn btn--primary">Agendar Horário</a>
+                    <button class="nav__toggle" aria-label="Abrir menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Products Grid -->
+    <section class="products">
+        <div class="container">
+            <div class="barbers__header">
+                <span class="section__label">Loja Casablanca</span>
+                <h2 class="section__title">Itens disponíveis</h2>
+                <p class="section__description">Produtos de alta qualidade para manter seu visual impecável.</p>
+            </div>
+
+            <div class="products__grid">
+                <!-- Produto: Óleo para Barba -->
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="IMG/items/Oleo_Barba.png" alt="Óleo para Barba">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__name">Óleo para Barba</h3>
+                        <div class="product-price">R$ 60</div>
+                        <p class="product-card__description">Hidrata e alinha os fios, proporcionando maciez e brilho natural.</p>
+                        <div class="product-card__actions">
+                            <a class="btn btn--primary btn--small" target="_blank" rel="noopener"
+                               href="https://api.whatsapp.com/send/?phone=5584987912547&text=Ol%C3%A1%2C+gostaria+de+comprar+o+%C3%93leo+para+Barba.+Voc%C3%AA+pode+me+informar+disponibilidade+e+valor%3F&type=phone_number&app_absent=0">
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                    <!-- Produto: Pasta Modeladora FOX (simple carousel) -->
+                    <div class="product-card">
+                        <div class="simple-carousel" data-images="IMG/items/Pasta_Modeladora_FOX.png,IMG/items/Pasta_Modeladora_FOX_1.png,IMG/items/Pasta_Modeladora_FOX_2.png">
+                            <button class="simple-carousel__btn simple-carousel__btn--prev" aria-label="Anterior">‹</button>
+                            <img class="simple-carousel__img" src="IMG/items/Pasta_Modeladora_FOX.png" alt="Pasta Modeladora FOX" loading="lazy">
+                            <button class="simple-carousel__btn simple-carousel__btn--next" aria-label="Próximo">›</button>
+                        </div>
+                        <div class="product-card__content">
+                            <h3 class="product-card__name">Pasta Modeladora FOX</h3>
+                            <div class="product-price">R$ 49,90</div>
+                            <p class="product-card__description">Fixação média e acabamento natural para estilizar o cabelo no dia a dia.</p>
+                            <div class="product-card__actions">
+                                <a class="btn btn--primary btn--small" target="_blank" rel="noopener"
+                                   href="https://api.whatsapp.com/send/?phone=5584987912547&text=Ol%C3%A1%2C+gostaria+de+comprar+a+Pasta+Modeladora+FOX.+Voc%C3%AA+pode+me+informar+disponibilidade+e+valor%3F&type=phone_number&app_absent=0">
+                                    Comprar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- Produto: Shampoo Anti-Caspa FOX -->
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="IMG/items/Shampoo_Anti_Caspa_FOX.png" alt="Shampoo Anti-Caspa FOX">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__name">Shampoo Anti-Caspa FOX</h3>
+                        <div class="product-price">R$ 65</div>
+                        <p class="product-card__description">Combate a caspa e oleosidade mantendo o couro cabeludo saudável.</p>
+                        <div class="product-card__actions">
+                            <a class="btn btn--primary btn--small" target="_blank" rel="noopener"
+                               href="https://api.whatsapp.com/send/?phone=5584987912547&text=Ol%C3%A1%2C+gostaria+de+comprar+o+Shampoo+Anti-Caspa+FOX.+Voc%C3%AA+pode+me+informar+disponibilidade+e+valor%3F&type=phone_number&app_absent=0">
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produto: Leave-In -->
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="IMG/items/Leave-In.png" alt="Leave-In">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__name">Leave-In</h3>
+                        <div class="product-price">R$ 65</div>
+                        <p class="product-card__description">Leave-in nutritivo para controlar frizz e proteger os fios ao longo do dia.</p>
+                        <div class="product-card__actions">
+                            <a class="btn btn--primary btn--small" target="_blank" rel="noopener"
+                               href="https://api.whatsapp.com/send/?phone=5584987912547&text=Ol%C3%A1%2C+gostaria+de+comprar+o+Leave-In.+Voc%C3%AA+pode+me+informar+disponibilidade+e+valor%3F&type=phone_number&app_absent=0">
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contato">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <h3 class="footer__title">Casablanca</h3>
+                    <p class="footer__text">Barbearia Premium</p>
+                    <p class="footer__address">Av. Xavier da Silveira, 56<br>Morro Branco - RN</p>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/__barbeariacasablanca/" target="_blank" rel="noopener" aria-label="Instagram" class="footer__social-link">
+                            <img src="IMG/instagram.png" alt="Instagram">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer__links">
+                    <h4 class="footer__links-title">Navegação</h4>
+                    <ul class="footer__links-list">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#sobre">Sobre</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="index.html#contato">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__links">
+                    <h4 class="footer__links-title">Suporte</h4>
+                    <ul class="footer__links-list">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Como Funciona</a></li>
+                        <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__contact">
+                    <h4 class="footer__links-title">Contato</h4>
+                    <p class="footer__contact-item">barbeariacasablanca@casablanca.com</p>
+                    <p class="footer__contact-item">(84) 98791-2547</p>
+                    <p class="footer__contact-item">Brasil - RN</p>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p>&copy; 2025 Casablanca Barbearia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/main.js"></script>
+</body>
+</html>
