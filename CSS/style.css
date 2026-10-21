@@ -1068,6 +1068,61 @@ h3 {
     gap: 16px;
 }
 
+.form-grid > .form-group {
+    min-width: 0;
+}
+
+/* Remove o estilo nativo do iOS (fundo cinza, texto azul, campo de data estourando) */
+.scheduling__form .form-group input,
+.scheduling__form .form-group select {
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: 48px;
+    padding: 0 14px;
+    line-height: 44px;
+    background-color: var(--white);
+    color: var(--text-primary);
+}
+
+.scheduling__form .form-group select {
+    padding-right: 40px;
+}
+
+.scheduling__form .form-group input[type="date"] {
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+}
+
+/* No iOS o valor da data fica vazio e sem altura quando nada foi escolhido */
+.scheduling__form .form-group input[type="date"]::-webkit-date-and-time-value {
+    text-align: left;
+    min-height: 1.2em;
+    margin: 0;
+}
+
+.scheduling__form .form-group input[type="date"]::-webkit-datetime-edit {
+    padding: 0;
+}
+
+.scheduling__form .form-group select:disabled {
+    background-color: var(--bg-light, #f5f5f5);
+    color: var(--text-secondary, #888);
+    cursor: not-allowed;
+}
+
+/* Fonte de 16px evita o zoom automático do iOS ao focar no campo */
+@media (max-width: 768px) {
+    .scheduling__form .form-group input,
+    .scheduling__form .form-group select {
+        font-size: 16px;
+    }
+}
+
 @media (max-width: 768px) {
     .schedule-hero {
         padding: 60px 0 40px;
